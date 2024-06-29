@@ -27,4 +27,10 @@ body {
   white-space: pre-wrap;
   outline: none;
   border: none;
+}
+
+@media screen and (max-width: 992px) {
+  #page {
+    width: 90vw;
+  }
 }/*# sourceMappingURL=style.css.map */

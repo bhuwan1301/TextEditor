@@ -27,5 +27,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
             editorPanel.style.fontSize = newSize + "px";
             e.preventDefault();
         }
+
     })
 })
