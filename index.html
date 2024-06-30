@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextEditor</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
 
     <div id="menu">
 
-        <button class="fontSizeButton" id="fontInc">+</button>
-        <p id="displayFontSize"></p>
-        <button class="fontSizeButton" id="fontDec">-</button>
+        <div class="fontSizeControl">
+
+            <button class="fontSizeButton" id="fontInc">+</button>
+            <p id="displayFontSize"></p>
+            <button class="fontSizeButton" id="fontDec">-</button>
+            
+        </div>
+
+
+        <button class="fontStyleButton" id="makeBold">B</button>
+        <button class="fontStyleButton" id="makeItalic">I</button>
+
 
     </div>
-    
+
     <div id="page">
         <div id="editor" contenteditable="true"></div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

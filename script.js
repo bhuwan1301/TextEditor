@@ -55,4 +55,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById("fontDec").addEventListener("click",()=>{
         decreaseFontSize();
     })
+
+    document.getElementById("makeBold").addEventListener("click", ()=>{
+        document.execCommand("bold");
+    })
+    document.getElementById("makeItalic").addEventListener("click", ()=>{
+        document.execCommand("italic");
+    })
 })
