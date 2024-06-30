@@ -5,18 +5,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let displayFontSize = document.getElementById("displayFontSize");
     displayFontSize.innerHTML = `Font Size: 18px`;
 
-    editorPanel.addEventListener('input', ()=>{
-        const text = editorPanel.innerHTML;
-        localStorage.setItem('content', text);
-    })
+    // editorPanel.addEventListener('input', ()=>{
+    //     const text = editorPanel.innerHTML;
+    //     localStorage.setItem('content', text);
+    // })
 
-    let screenText = localStorage.getItem('content');
-    if(screenText){
-        editorPanel.innerHTML = screenText;
-    }
+    // let screenText = localStorage.getItem('content');
+    // if(screenText){
+    //     editorPanel.innerHTML = screenText;
+    // }
 
+    //EVENT LISTENERS
     document.addEventListener('keydown', (e)=>{
-
         if(e.ctrlKey && e.key==='ArrowUp'){
             increaseFontSize();
             e.preventDefault();
@@ -26,9 +26,43 @@ document.addEventListener('DOMContentLoaded', ()=>{
             decreaseFontSize();
             e.preventDefault();
         }
-
     })
 
+    document.getElementById("fontInc").addEventListener("click",()=>{
+        increaseFontSize();
+    })
+    document.getElementById("fontDec").addEventListener("click",()=>{
+        decreaseFontSize();
+    })
+
+    document.getElementById("makeBold").addEventListener("click", ()=>{
+        document.execCommand("bold");
+    })
+    document.getElementById("makeItalic").addEventListener("click", ()=>{
+        document.execCommand("italic");
+    })
+
+    document.getElementById("save").addEventListener("click",()=>{
+        let filename = window.prompt("Enter file name to save: ");
+        if(filename.trim() === ""){
+            alert("File name cannot be empty");
+        }else{
+            saveFile(filename);
+            alert("File saved succesfully!")
+        }
+    })
+
+    document.getElementById('load').addEventListener("click", ()=>{
+        let filename = window.prompt("Enter file name to load: ");
+        if(filename.trim() === ""){
+            alert("File name cannot be empty");
+        }else{
+            loadFile(filename);
+        }
+    })
+
+
+    //FUNCTIONS
     function increaseFontSize(){
         let ftSize = editorPanel.style.fontSize;
         let newSize = parseFloat(ftSize) + 1;
@@ -47,19 +81,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
         displayFontSize.innerHTML = "Font Size: " + newSize + "px";
     }
 
+    function saveFile(filename){
+        let text = editorPanel.innerHTML;
+        localStorage.setItem(filename, text);
+    }
 
-
-    document.getElementById("fontInc").addEventListener("click",()=>{
-        increaseFontSize();
-    })
-    document.getElementById("fontDec").addEventListener("click",()=>{
-        decreaseFontSize();
-    })
-
-    document.getElementById("makeBold").addEventListener("click", ()=>{
-        document.execCommand("bold");
-    })
-    document.getElementById("makeItalic").addEventListener("click", ()=>{
-        document.execCommand("italic");
-    })
+    function loadFile(filename){
+        let text = localStorage.getItem(filename);
+        if(text===null){
+            alert("File not found");
+        }else{
+            editorPanel.innerHTML = text;
+            alert("File loaded succesfully!")
+        }
+    }
+    
 })
