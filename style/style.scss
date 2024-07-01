@@ -1,4 +1,4 @@
-$bg-color: rgb(0, 128, 255);
+$bg-color: #1b263b;
 
 * {
   box-sizing: border-box;
@@ -8,6 +8,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: $bg-color;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 * button {
@@ -15,16 +16,17 @@ body {
 }
 
 #menu {
-  background-color: rgb(0, 195, 255);
+  background-color: #415a77;
   width: 98.5vw;
   height: 8vh;
   position: sticky;
   top: 0;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 0 0.5vw;
+  color: white;
 }
 
 .file {
@@ -64,10 +66,12 @@ body {
   border: none;
   padding: 10px;
   text-align: center;
+  transition : all 0.1s ease-in-out;
 }
 
 .dropdown-content button:hover {
-  background-color: rgb(0, 180, 240);
+  background-color: #1b263b;
+  color : white;
 }
 
 .fontSizeControl {
@@ -90,6 +94,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 16px;
 }
 
 .fontStyleButton {
@@ -101,7 +106,7 @@ body {
 }
 
 #page {
-  background-color: white;
+  background-color: #e0e1dd;
   width: 950px;
   min-height: 80vh;
   margin: auto;
@@ -129,7 +134,7 @@ body {
 
 .btn {
   border: 0px;
-  border-radius: 3px;
+  border-radius: 4px;
   box-shadow: none;
   background-color: #ffffff;
 }
@@ -144,5 +149,9 @@ body {
 }
 
 .active {
-  border: 1px solid #666666;
+  border: 1px solid black;
+}
+
+.dropdown-content {
+  border-radius : 4px;
 }

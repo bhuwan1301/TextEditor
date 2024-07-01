@@ -1,4 +1,8 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+const delay = (msTime) => {
+  return new Promise(resolve=> setTimeout(resolve, msTime)); 
+}
+
+document.addEventListener('DOMContentLoaded', ()=> {
     let editorPanel = document.getElementById("editor");
     editorPanel.style.fontSize = "18px";
 
@@ -67,6 +71,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
             loadFile(filename);
         }
     })
+
+    const fontSizeBtns = document.querySelectorAll(".fontSizeButton"); 
+    for(const Btn of fontSizeBtns) {
+      Btn.addEventListener("click", async () => {
+        Btn.classList.add("active"); 
+        await delay(50);
+        Btn.classList.remove("active"); 
+        
+      }) 
+    }
 
 
     //FUNCTIONS
