@@ -1,132 +1,157 @@
-$bg-color: rgb(0, 128, 255);
+$bg-color: #1b263b;
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    padding: 0;
-    margin: 0;
-    background-color: $bg-color;
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $bg-color;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-* button{
-    cursor: pointer;
+* button {
+  cursor: pointer;
 }
 
-#menu{
-    background-color: rgb(0, 195, 255);
-    width: 98.5vw;
-    height: 8vh;
-    position: sticky;
-    top: 0;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0.5vw;
+#menu {
+  background-color: #415a77;
+  width: 98.5vw;
+  height: 8vh;
+  position: sticky;
+  top: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0.5vw;
+  color: white;
 }
 
 .file {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    width: 3.5%;
-    // border: 1px solid black;
-    // height: 100%;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 3.5%;
+  // border: 1px solid black;
+  // height: 100%;
+}
 
-#files{
-    font-size: 1vw;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
+#files {
+  cursor: pointer;
+  width: clamp(50px, 100%, 100%);
+  height: 100%;
 }
 
 .dropdown-content {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    // border: 1px solid black;
-    width: 100%;
-    z-index: 1;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  // border: 1px solid black;
+  width: clamp(60px, 100%, 100%);
+  z-index: 1;
 }
 
 .file:hover .dropdown-content {
-    display: flex;
+  display: flex;
+  gap: 3px;
 }
 
 .dropdown-content button {
-    border: none;
-    font-size: 0.85vw;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  transition : all 0.1s ease-in-out;
 }
 
 .dropdown-content button:hover {
-    background-color: rgb(0, 180, 240);
-}
-  
-
-.fontSizeControl{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 15%;
-    height: 100%;
-    // border: 1px solid black;
+  background-color: #1b263b;
+  color : white;
 }
 
-#displayFontSize{
-    font-size: 2.5vh;
+.fontSizeControl {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  align-items: center;
+  width: clamp(230px, 15%, 15%);
+  height: 100%;
+  // border: 1px solid black;
 }
 
-.fontSizeButton{
-    height: 40%;
-    width: 10%;
-    font-size: 3vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.FontSize {
+  width: clamp(120px, 140px, 150px);
 }
 
-.fontStyleButton{
-    width: 2%;
-    height: 40%;
-    font-size: 2.5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.fontSizeButton {
+  height: 40%;
+  width: clamp(30px, 10%, 10%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.fontStyleButton {
+  width: clamp(30px, 2%, 2%);
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #page {
-    background-color: white;
-    width: 950px;
-    min-height: 80vh;
-    margin: auto;
-    margin-top: 2vh;
-    padding: 20px 25px;
-    border-radius: 8px;
-    border: 2px solid gray;
+  background-color: #e0e1dd;
+  width: 950px;
+  min-height: 80vh;
+  margin: auto;
+  margin-top: 2vh;
+  padding: 20px 25px;
+  border-radius: 8px;
+  border: 2px solid gray;
 }
 
 #editor {
-    width: 100%;
-    min-height: 90vh;
-    padding: 10px;
-    overflow-y: auto;
-    white-space: pre-wrap;
-    outline: none;
-    border: none;
+  width: 100%;
+  min-height: 90vh;
+  padding: 10px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  outline: none;
+  border: none;
 }
 
-@media screen and (max-width:992px){
-    #page {        
-        width: 90vw;
-    }
+@media screen and (max-width: 992px) {
+  #page {
+    width: 90vw;
+  }
+}
+
+.btn {
+  border: 0px;
+  border-radius: 4px;
+  box-shadow: none;
+  background-color: #ffffff;
+}
+
+.fileMenu {
+  background-color: transparent;
+  width: 100%;
+}
+
+.fileBtn {
+  background-color: #f0f0f0;
+}
+
+.active {
+  border: 1px solid black;
+}
+
+.dropdown-content {
+  border-radius : 4px;
 }

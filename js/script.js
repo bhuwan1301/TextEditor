@@ -1,4 +1,8 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+const delay = (msTime) => {
+  return new Promise(resolve=> setTimeout(resolve, msTime)); 
+}
+
+document.addEventListener('DOMContentLoaded', ()=> {
     let editorPanel = document.getElementById("editor");
     editorPanel.style.fontSize = "18px";
 
@@ -35,10 +39,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
         decreaseFontSize();
     })
 
-    document.getElementById("makeBold").addEventListener("click", ()=>{
+    const boldBtn = document.getElementById("makeBold")
+    boldBtn.addEventListener("click", ()=>{
+        if(boldBtn.classList.contains("active")) boldBtn.classList.remove("active"); 
+        else boldBtn.classList.add("active");
+        if(boldBtn.style.fontWeight == 800) boldBtn.style.fontWeight = 450;
+        else boldBtn.style.fontWeight = 800;
         document.execCommand("bold");
+        
     })
-    document.getElementById("makeItalic").addEventListener("click", ()=>{
+    
+  const itBtn = document.getElementById("makeItalic")
+    itBtn.addEventListener("click", ()=>{
+        if(itBtn.classList.contains("active")) itBtn.classList.remove("active");
+        else itBtn.classList.add("active");
+        if(itBtn.style.fontWeight == 800) itBtn.style.fontWeight = 450;
+        else itBtn.style.fontWeight = 800;
         document.execCommand("italic");
     })
 
@@ -60,6 +76,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
             loadFile(filename);
         }
     })
+
+    const fontSizeBtns = document.querySelectorAll(".fontSizeButton"); 
+    for(const Btn of fontSizeBtns) {
+      Btn.addEventListener("click", async () => {
+        Btn.classList.add("active"); 
+        await delay(50);
+        Btn.classList.remove("active"); 
+        
+      }) 
+    }
 
 
     //FUNCTIONS
