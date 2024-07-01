@@ -35,10 +35,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
         decreaseFontSize();
     })
 
-    document.getElementById("makeBold").addEventListener("click", ()=>{
+    const boldBtn = document.getElementById("makeBold")
+    boldBtn.addEventListener("click", ()=>{
+        boldBtn.classList.add("active");
         document.execCommand("bold");
     })
-    document.getElementById("makeItalic").addEventListener("click", ()=>{
+    
+  const itBtn = document.getElementById("makeItalic")
+    itBtn.addEventListener("click", ()=>{
+        itBtn.classList.add("active");
         document.execCommand("italic");
     })
 

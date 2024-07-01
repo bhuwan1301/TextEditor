@@ -34,9 +34,8 @@ body {
 }
 
 #files {
-  font-size: 1vw;
   cursor: pointer;
-  width: 100%;
+  width: clamp(50px, 100%, 100%);
   height: 100%;
 }
 
@@ -47,20 +46,19 @@ body {
   top: 100%;
   left: 0;
   background-color: white;
-  width: 100%;
+  width: clamp(60px, 100%, 100%);
   z-index: 1;
 }
 
 .file:hover .dropdown-content {
   display: flex;
+  gap: 3px;
 }
 
 .dropdown-content button {
   border: none;
-  font-size: 0.85vw;
   padding: 10px;
-  width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 .dropdown-content button:hover {
@@ -69,29 +67,28 @@ body {
 
 .fontSizeControl {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  justify-content: space-around;
   align-items: center;
-  width: 15%;
+  width: clamp(230px, 15%, 15%);
   height: 100%;
 }
 
-#displayFontSize {
-  font-size: 2.5vh;
+.FontSize {
+  width: 140px;
 }
 
 .fontSizeButton {
   height: 40%;
-  width: 10%;
-  font-size: 3vh;
+  width: clamp(30px, 10%, 10%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .fontStyleButton {
-  width: 2%;
+  width: clamp(30px, 2%, 2%);
   height: 40%;
-  font-size: 2.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,4 +119,21 @@ body {
   #page {
     width: 90vw;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+.btn {
+  border: 0px;
+  border-radius: 3px;
+  box-shadow: none;
+  background-color: #ffffff;
+}
+
+.fileMenu {
+  background-color: transparent;
+  width: 100%;
+}
+
+.fileBtn {
+  background-color: #f0f0f0;
+}
+
+/*# sourceMappingURL=style.css.map */
