@@ -41,15 +41,20 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     const boldBtn = document.getElementById("makeBold")
     boldBtn.addEventListener("click", ()=>{
-        if(boldBtn.classList.contains("active")) boldBtn.classList.remove("active");
+        if(boldBtn.classList.contains("active")) boldBtn.classList.remove("active"); 
         else boldBtn.classList.add("active");
+        if(boldBtn.style.fontWeight == 800) boldBtn.style.fontWeight = 450;
+        else boldBtn.style.fontWeight = 800;
         document.execCommand("bold");
+        
     })
     
   const itBtn = document.getElementById("makeItalic")
     itBtn.addEventListener("click", ()=>{
         if(itBtn.classList.contains("active")) itBtn.classList.remove("active");
         else itBtn.classList.add("active");
+        if(itBtn.style.fontWeight == 800) itBtn.style.fontWeight = 450;
+        else itBtn.style.fontWeight = 800;
         document.execCommand("italic");
     })
 
