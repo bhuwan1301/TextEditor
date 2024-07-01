@@ -37,13 +37,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     const boldBtn = document.getElementById("makeBold")
     boldBtn.addEventListener("click", ()=>{
-        boldBtn.classList.add("active");
+        if(boldBtn.classList.contains("active")) boldBtn.classList.remove("active");
+        else boldBtn.classList.add("active");
         document.execCommand("bold");
     })
     
   const itBtn = document.getElementById("makeItalic")
     itBtn.addEventListener("click", ()=>{
-        itBtn.classList.add("active");
+        if(itBtn.classList.contains("active")) itBtn.classList.remove("active");
+        else itBtn.classList.add("active");
         document.execCommand("italic");
     })
 
